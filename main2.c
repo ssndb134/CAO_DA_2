@@ -64,7 +64,7 @@ double epoch_parallel(int i, int t){
     }
 
     // ---- Parallel counting loop ----
-    #pragma omp parallel for reduction(+:count)
+    #pragma omp parallel for schedule(static) reduction(+:count)
     for (long long j = 0; j < n; j++) {
         if(x_arr[j]*x_arr[j] + y_arr[j]*y_arr[j] <= 1) count++;
     }
