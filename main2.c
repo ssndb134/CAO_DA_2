@@ -334,7 +334,7 @@ int main (int argc, char *argv[]) {
 	for(int i = 0;i<4;i++){
 		printf("======PARALLEL Execution with %d THREADS=====\n", threads[i]);
 		omp_set_num_threads(threads[i]);
-  omp_set_proc_bind(omp_proc_bind_true);
+  //omp_set_proc_bind(omp_proc_bind_true);
 		double start = omp_get_wtime();
 		double piv = pi_estimate_par(threads[i]);
 		double intg = riemann_sums_par(threads[i]);
